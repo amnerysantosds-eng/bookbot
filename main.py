@@ -1,4 +1,4 @@
-from stats import get_word_count
+from stats import get_character_count
 
 def get_book_test(filepath):
     with open(filepath) as file:
@@ -7,6 +7,7 @@ def get_book_test(filepath):
 def main():
     filepath = "books/frankenstein.txt"
     book_content = get_book_test(filepath)
-    num_words = get_word_count(book_content)
+    character_dictionary = get_character_count(book_content)
+    print(character_dictionary)
 
 main()
