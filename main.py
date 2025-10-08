@@ -1,11 +1,17 @@
-import stats
+import stats, sys
 
 def get_book_test(filepath):
     with open(filepath) as file:
         return file.read()
 
 def main():
-    filepath = "books/frankenstein.txt"
+    
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    
+    filepath = sys.argv[1]
+    
     book_content = get_book_test(filepath)
     word_count = stats.get_word_count(book_content)
     character_dictionary = stats.get_character_count(book_content)
